@@ -1,0 +1,1032 @@
+[
+  {
+    "endpoint": "api_gateway/list",
+    "service_name": "APIGateway",
+    "http_command": "GET",
+    "name": "list_endpoints",
+    "rpc_queue": "apigateway.list_endpoints",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "api_gateway/list",
+    "service_name": "APIGateway",
+    "http_command": "POST",
+    "name": "list_endpoints",
+    "rpc_queue": "apigateway.list_endpoints",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "api_gateway/delete",
+    "service_name": "APIGateway",
+    "http_command": "DELETE",
+    "name": "delete_endpoints",
+    "rpc_queue": "apigateway.delete_endpoints",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "up",
+    "service_name": "APIGateway",
+    "http_command": "GET",
+    "name": "is_up",
+    "rpc_queue": "apigateway.is_up",
+    "rest_action": "strict",
+    "kwargs": {}
+  },
+  {
+    "endpoint": "api_gateway/check_workflow",
+    "service_name": "APIGateway",
+    "http_command": "GET",
+    "name": "check_workflow",
+    "rpc_queue": "apigateway.check_workflow_api",
+    "rest_action": "strict",
+    "kwargs": {}
+  },
+  {
+    "endpoint": "auth/accept_invite",
+    "service_name": "UserManager",
+    "http_command": "GET",
+    "name": "accept_invite",
+    "rpc_queue": "user_manager.accept_invite",
+    "rest_action": "redirect",
+    "kwargs": {}
+  },
+  {
+    "endpoint": "auth/accept_invite",
+    "service_name": "UserManager",
+    "http_command": "POST",
+    "name": "accept_invite",
+    "rpc_queue": "user_manager.accept_invite",
+    "rest_action": "redirect",
+    "kwargs": {}
+  },
+  {
+    "endpoint": "user_management/add_user_to_org",
+    "service_name": "UserManager",
+    "http_command": "GET",
+    "name": "add_user_to_org",
+    "rpc_queue": "user_manager.add_user_to_org",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "user_management/add_user_to_org",
+    "service_name": "UserManager",
+    "http_command": "POST",
+    "name": "add_user_to_org",
+    "rpc_queue": "user_manager.add_user_to_org",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "user_management/change_nickname",
+    "service_name": "UserManager",
+    "http_command": "GET",
+    "name": "change_nickname",
+    "rpc_queue": "user_manager.change_nickname",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": null
+    }
+  },
+  {
+    "endpoint": "user_management/change_nickname",
+    "service_name": "UserManager",
+    "http_command": "POST",
+    "name": "change_nickname",
+    "rpc_queue": "user_manager.change_nickname",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": null
+    }
+  },
+  {
+    "endpoint": "user_management/change_password",
+    "service_name": "UserManager",
+    "http_command": "GET",
+    "name": "change_password",
+    "rpc_queue": "user_manager.change_password",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": null
+    }
+  },
+  {
+    "endpoint": "user_management/change_password",
+    "service_name": "UserManager",
+    "http_command": "POST",
+    "name": "change_password",
+    "rpc_queue": "user_manager.change_password",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": null
+    }
+  },
+  {
+    "endpoint": "user_management/invite_user",
+    "service_name": "UserManager",
+    "http_command": "GET",
+    "name": "invite_user",
+    "rpc_queue": "user_manager.invite_user",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "user_management/invite_user",
+    "service_name": "UserManager",
+    "http_command": "POST",
+    "name": "invite_user",
+    "rpc_queue": "user_manager.invite_user",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "org_management/list_invitations",
+    "service_name": "UserManager",
+    "http_command": "GET",
+    "name": "list_invitations",
+    "rpc_queue": "user_manager.list_invitations",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "org_management/list_invitations",
+    "service_name": "UserManager",
+    "http_command": "POST",
+    "name": "list_invitations",
+    "rpc_queue": "user_manager.list_invitations",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "user_management/list_users",
+    "service_name": "UserManager",
+    "http_command": "GET",
+    "name": "list_users",
+    "rpc_queue": "user_manager.list_users",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "user_management/list_users",
+    "service_name": "UserManager",
+    "http_command": "POST",
+    "name": "list_users",
+    "rpc_queue": "user_manager.list_users",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "auth/logout",
+    "service_name": "UserManager",
+    "http_command": "GET",
+    "name": "logout",
+    "rpc_queue": "user_manager.logout",
+    "rest_action": "redirect",
+    "kwargs": {}
+  },
+  {
+    "endpoint": "auth/logout",
+    "service_name": "UserManager",
+    "http_command": "POST",
+    "name": "logout",
+    "rpc_queue": "user_manager.logout",
+    "rest_action": "redirect",
+    "kwargs": {}
+  },
+  {
+    "endpoint": "auth/oauth_authorize",
+    "service_name": "UserManager",
+    "http_command": "GET",
+    "name": "oauth_authorize",
+    "rpc_queue": "user_manager.oauth_authorize",
+    "rest_action": "redirect",
+    "kwargs": {}
+  },
+  {
+    "endpoint": "auth/oauth_authorize",
+    "service_name": "UserManager",
+    "http_command": "POST",
+    "name": "oauth_authorize",
+    "rpc_queue": "user_manager.oauth_authorize",
+    "rest_action": "redirect",
+    "kwargs": {}
+  },
+  {
+    "endpoint": "auth/oauth_code",
+    "service_name": "UserManager",
+    "http_command": "GET",
+    "name": "oauth_redirect",
+    "rpc_queue": "user_manager.oauth_redirect",
+    "rest_action": "redirect",
+    "kwargs": {}
+  },
+  {
+    "endpoint": "auth/oauth_refresh",
+    "service_name": "UserManager",
+    "http_command": "GET",
+    "name": "oauth_refresh",
+    "rpc_queue": "user_manager.oauth_refresh",
+    "rest_action": "strict",
+    "kwargs": {}
+  },
+  {
+    "endpoint": "auth/oauth_refresh",
+    "service_name": "UserManager",
+    "http_command": "POST",
+    "name": "oauth_refresh",
+    "rpc_queue": "user_manager.oauth_refresh",
+    "rest_action": "strict",
+    "kwargs": {}
+  },
+  {
+    "endpoint": "auth/oauth_token",
+    "service_name": "UserManager",
+    "http_command": "GET",
+    "name": "oauth_token",
+    "rpc_queue": "user_manager.oauth_token",
+    "rest_action": "strict",
+    "kwargs": {}
+  },
+  {
+    "endpoint": "auth/oauth_token",
+    "service_name": "UserManager",
+    "http_command": "POST",
+    "name": "oauth_token",
+    "rpc_queue": "user_manager.oauth_token",
+    "rest_action": "strict",
+    "kwargs": {}
+  },
+  {
+    "endpoint": "user_management/onboard_org",
+    "service_name": "UserManager",
+    "http_command": "GET",
+    "name": "onboard_org",
+    "rpc_queue": "user_manager.onboard_org",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "user_management/onboard_org",
+    "service_name": "UserManager",
+    "http_command": "POST",
+    "name": "onboard_org",
+    "rpc_queue": "user_manager.onboard_org",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "user_management/remove_org",
+    "service_name": "UserManager",
+    "http_command": "GET",
+    "name": "remove_org",
+    "rpc_queue": "user_manager.remove_org",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "user_management/remove_org",
+    "service_name": "UserManager",
+    "http_command": "POST",
+    "name": "remove_org",
+    "rpc_queue": "user_manager.remove_org",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "user_management/remove_user_from_org",
+    "service_name": "UserManager",
+    "http_command": "GET",
+    "name": "remove_user_from_org",
+    "rpc_queue": "user_manager.remove_user_from_org",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "user_management/remove_user_from_org",
+    "service_name": "UserManager",
+    "http_command": "POST",
+    "name": "remove_user_from_org",
+    "rpc_queue": "user_manager.remove_user_from_org",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "org_management/revoke_invitation",
+    "service_name": "UserManager",
+    "http_command": "GET",
+    "name": "revoke_invitation",
+    "rpc_queue": "user_manager.revoke_invitation",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "org_management/revoke_invitation",
+    "service_name": "UserManager",
+    "http_command": "POST",
+    "name": "revoke_invitation",
+    "rpc_queue": "user_manager.revoke_invitation",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "user_management/set_user_role",
+    "service_name": "UserManager",
+    "http_command": "GET",
+    "name": "set_user_role",
+    "rpc_queue": "user_manager.set_user_role",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "user_management/set_user_role",
+    "service_name": "UserManager",
+    "http_command": "POST",
+    "name": "set_user_role",
+    "rpc_queue": "user_manager.set_user_role",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "auth/verify",
+    "service_name": "UserManager",
+    "http_command": "GET",
+    "name": "verify_login",
+    "rpc_queue": "user_manager.verify_login",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 30
+    }
+  },
+  {
+    "endpoint": "auth/verify",
+    "service_name": "UserManager",
+    "http_command": "POST",
+    "name": "verify_login",
+    "rpc_queue": "user_manager.verify_login",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 30
+    }
+  },
+  {
+    "endpoint": "org_management/add_domain_to_org",
+    "service_name": "OrganizationManager",
+    "http_command": "PUT",
+    "name": "add_domain_to_org",
+    "rpc_queue": "organization_manager.add_domain_to_org",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "org_management/add_org_to_org",
+    "service_name": "OrganizationManager",
+    "http_command": "GET",
+    "name": "add_org_to_org",
+    "rpc_queue": "organization_manager.add_org_to_org",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "org_management/add_org_to_org",
+    "service_name": "OrganizationManager",
+    "http_command": "POST",
+    "name": "add_org_to_org",
+    "rpc_queue": "organization_manager.add_org_to_org",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "org_management/attach_org",
+    "service_name": "OrganizationManager",
+    "http_command": "GET",
+    "name": "attach_org",
+    "rpc_queue": "organization_manager.attach_org",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "org_management/attach_org",
+    "service_name": "OrganizationManager",
+    "http_command": "POST",
+    "name": "attach_org",
+    "rpc_queue": "organization_manager.attach_org",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "org_management/detach_org",
+    "service_name": "OrganizationManager",
+    "http_command": "GET",
+    "name": "detach_org",
+    "rpc_queue": "organization_manager.detach_org",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "org_management/detach_org",
+    "service_name": "OrganizationManager",
+    "http_command": "POST",
+    "name": "detach_org",
+    "rpc_queue": "organization_manager.detach_org",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "org_management/get_allowed_orgs",
+    "service_name": "OrganizationManager",
+    "http_command": "GET",
+    "name": "get_allowed_orgs",
+    "rpc_queue": "organization_manager.get_allowed_orgs",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "org_management/get_allowed_orgs",
+    "service_name": "OrganizationManager",
+    "http_command": "POST",
+    "name": "get_allowed_orgs",
+    "rpc_queue": "organization_manager.get_allowed_orgs",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "onboarding/get_state",
+    "service_name": "OrganizationManager",
+    "http_command": "GET",
+    "name": "get_onboarding_state",
+    "rpc_queue": "organization_manager.get_onboarding_state",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 30
+    }
+  },
+  {
+    "endpoint": "org_management/get_org_data",
+    "service_name": "OrganizationManager",
+    "http_command": "GET",
+    "name": "get_org_data",
+    "rpc_queue": "organization_manager.get_org_data",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "org_management/get_org_data",
+    "service_name": "OrganizationManager",
+    "http_command": "POST",
+    "name": "get_org_data",
+    "rpc_queue": "organization_manager.get_org_data",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "org_management/list_org_domains",
+    "service_name": "OrganizationManager",
+    "http_command": "GET",
+    "name": "list_org_domains",
+    "rpc_queue": "organization_manager.list_org_domains",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "org_management/list_org_domains",
+    "service_name": "OrganizationManager",
+    "http_command": "POST",
+    "name": "list_org_domains",
+    "rpc_queue": "organization_manager.list_org_domains",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "onboarding/add",
+    "service_name": "OrganizationManager",
+    "http_command": "PUT",
+    "name": "onboarding_add",
+    "rpc_queue": "organization_manager.onboarding_add",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 30
+    }
+  },
+  {
+    "endpoint": "onboarding/remove",
+    "service_name": "OrganizationManager",
+    "http_command": "DELETE",
+    "name": "onboarding_remove",
+    "rpc_queue": "organization_manager.onboarding_remove",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 30
+    }
+  },
+  {
+    "endpoint": "org_management/remove_domain_from_org",
+    "service_name": "OrganizationManager",
+    "http_command": "PUT",
+    "name": "remove_domain_from_org",
+    "rpc_queue": "organization_manager.remove_domain_from_org",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "org_management/update_org_info",
+    "service_name": "OrganizationManager",
+    "http_command": "PUT",
+    "name": "update_org_info",
+    "rpc_queue": "organization_manager.update_org_info",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "integrations/authorize",
+    "service_name": "IntegrationCenter",
+    "http_command": "GET",
+    "name": "authorize_integration",
+    "rpc_queue": "integration_center.authorize_integration",
+    "rest_action": "auth_redirect",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "integrations/authorize_url",
+    "service_name": "IntegrationCenter",
+    "http_command": "POST",
+    "name": "authorize_integration_url",
+    "rpc_queue": "integration_center.authorize_integration_url",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "integrations/fetch_data",
+    "service_name": "IntegrationCenter",
+    "http_command": "POST",
+    "name": "fetch_data",
+    "rpc_queue": "integration_center.fetch_data",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "integrations/list",
+    "service_name": "IntegrationCenter",
+    "http_command": "GET",
+    "name": "list_integrations",
+    "rpc_queue": "integration_center.list_integrations",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 30
+    }
+  },
+  {
+    "endpoint": "integrations/list",
+    "service_name": "IntegrationCenter",
+    "http_command": "POST",
+    "name": "list_integrations",
+    "rpc_queue": "integration_center.list_integrations",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 30
+    }
+  },
+  {
+    "endpoint": "integrations/post_authorize",
+    "service_name": "IntegrationCenter",
+    "http_command": "GET",
+    "name": "post_authorize",
+    "rpc_queue": "integration_center.post_authorize",
+    "rest_action": "redirect",
+    "kwargs": {}
+  },
+  {
+    "endpoint": "phishing/campaign",
+    "service_name": "PhishingGym",
+    "http_command": "PUT",
+    "name": "complete_campaign",
+    "rpc_queue": "phishing_gym.complete_campaign",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "phishing/campaign",
+    "service_name": "PhishingGym",
+    "http_command": "POST",
+    "name": "create_campaign",
+    "rpc_queue": "phishing_gym.create_campaign",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "phishing/page",
+    "service_name": "PhishingGym",
+    "http_command": "POST",
+    "name": "create_page",
+    "rpc_queue": "phishing_gym.create_page",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "phishing/campaign/schedule",
+    "service_name": "PhishingGym",
+    "http_command": "POST",
+    "name": "create_scheduled_campaigns_series",
+    "rpc_queue": "phishing_gym.create_scheduled_campaigns_series",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20,
+      "workflow": true
+    }
+  },
+  {
+    "endpoint": "phishing/sending_profile",
+    "service_name": "PhishingGym",
+    "http_command": "POST",
+    "name": "create_sending_profile",
+    "rpc_queue": "phishing_gym.create_sending_profile",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "phishing/template",
+    "service_name": "PhishingGym",
+    "http_command": "POST",
+    "name": "create_template",
+    "rpc_queue": "phishing_gym.create_template",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "phishing/campaign",
+    "service_name": "PhishingGym",
+    "http_command": "DELETE",
+    "name": "delete_campaign",
+    "rpc_queue": "phishing_gym.delete_campaign",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "phishing/page",
+    "service_name": "PhishingGym",
+    "http_command": "DELETE",
+    "name": "delete_page",
+    "rpc_queue": "phishing_gym.delete_page",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "phishing/sending_profile",
+    "service_name": "PhishingGym",
+    "http_command": "DELETE",
+    "name": "delete_sending_profile",
+    "rpc_queue": "phishing_gym.delete_sending_profile",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "phishing/template",
+    "service_name": "PhishingGym",
+    "http_command": "DELETE",
+    "name": "delete_template",
+    "rpc_queue": "phishing_gym.delete_template",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "phishing/campaign",
+    "service_name": "PhishingGym",
+    "http_command": "GET",
+    "name": "get_campaign",
+    "rpc_queue": "phishing_gym.get_campaign",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "phishing/campaign/results",
+    "service_name": "PhishingGym",
+    "http_command": "GET",
+    "name": "get_campaign_results",
+    "rpc_queue": "phishing_gym.get_campaign_results",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "phishing/campaign/summary",
+    "service_name": "PhishingGym",
+    "http_command": "GET",
+    "name": "get_campaign_summary",
+    "rpc_queue": "phishing_gym.get_campaign_summary",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "phishing/page",
+    "service_name": "PhishingGym",
+    "http_command": "GET",
+    "name": "get_page",
+    "rpc_queue": "phishing_gym.get_page",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "phishing/sending_profile",
+    "service_name": "PhishingGym",
+    "http_command": "GET",
+    "name": "get_sending_profile",
+    "rpc_queue": "phishing_gym.get_sending_profile",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "phishing/template",
+    "service_name": "PhishingGym",
+    "http_command": "GET",
+    "name": "get_template",
+    "rpc_queue": "phishing_gym.get_template",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "phishing/campaign/list",
+    "service_name": "PhishingGym",
+    "http_command": "GET",
+    "name": "list_campaigns",
+    "rpc_queue": "phishing_gym.list_campaigns",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "phishing/page/list",
+    "service_name": "PhishingGym",
+    "http_command": "GET",
+    "name": "list_pages",
+    "rpc_queue": "phishing_gym.list_pages",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "phishing/sending_profile/list",
+    "service_name": "PhishingGym",
+    "http_command": "GET",
+    "name": "list_sending_profiles",
+    "rpc_queue": "phishing_gym.list_sending_profiles",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "phishing/series",
+    "service_name": "PhishingGym",
+    "http_command": "GET",
+    "name": "list_series",
+    "rpc_queue": "phishing_gym.list_series",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "integrations/list_apps",
+    "service_name": "InventoryKeeper",
+    "http_command": "GET",
+    "name": "list_apps",
+    "rpc_queue": "inventory_keeper.list_apps",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "phishing/series",
+    "service_name": "PhishingGym",
+    "http_command": "POST",
+    "name": "list_series",
+    "rpc_queue": "phishing_gym.list_series",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "integrations/list_apps",
+    "service_name": "InventoryKeeper",
+    "http_command": "POST",
+    "name": "list_apps",
+    "rpc_queue": "inventory_keeper.list_apps",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "phishing/template/list",
+    "service_name": "PhishingGym",
+    "http_command": "GET",
+    "name": "list_templates",
+    "rpc_queue": "phishing_gym.list_templates",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "integrations/list_devices",
+    "service_name": "InventoryKeeper",
+    "http_command": "GET",
+    "name": "list_devices",
+    "rpc_queue": "inventory_keeper.list_devices",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "phishing/page",
+    "service_name": "PhishingGym",
+    "http_command": "PUT",
+    "name": "modify_page",
+    "rpc_queue": "phishing_gym.modify_page",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "integrations/list_devices",
+    "service_name": "InventoryKeeper",
+    "http_command": "POST",
+    "name": "list_devices",
+    "rpc_queue": "inventory_keeper.list_devices",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "phishing/sending_profile",
+    "service_name": "PhishingGym",
+    "http_command": "PUT",
+    "name": "modify_sending_profile",
+    "rpc_queue": "phishing_gym.modify_sending_profile",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "integrations/list_users",
+    "service_name": "InventoryKeeper",
+    "http_command": "GET",
+    "name": "list_users",
+    "rpc_queue": "inventory_keeper.list_users",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "phishing/template",
+    "service_name": "PhishingGym",
+    "http_command": "PUT",
+    "name": "modify_template",
+    "rpc_queue": "phishing_gym.modify_template",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 15
+    }
+  },
+  {
+    "endpoint": "integrations/list_users",
+    "service_name": "InventoryKeeper",
+    "http_command": "POST",
+    "name": "list_users",
+    "rpc_queue": "inventory_keeper.list_users",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20
+    }
+  },
+  {
+    "endpoint": "phishing/onboard",
+    "service_name": "PhishingGym",
+    "http_command": "POST",
+    "name": "onboard_organization",
+    "rpc_queue": "phishing_gym.onboard_organization",
+    "rest_action": "auth_strict",
+    "kwargs": {
+      "min_role": 20,
+      "workflow": true
+    }
+  }
+]
