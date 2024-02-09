@@ -1,4 +1,4 @@
-import { Box, Button, Input, InputGroup, InputLeftElement, Table, TableCaption, Tbody, Td, Th, Thead, Tr, border } from "@chakra-ui/react";
+import { chakra, Box, Button, Input, InputGroup, InputLeftElement, Table, TableCaption, Tbody, Td, Th, Thead, Tr, border } from "@chakra-ui/react";
 import React, { useState } from "react";
 import ChevronIconLeft from "../icons/left";
 import ChevronIconRight from "../icons/right";
@@ -21,6 +21,34 @@ interface Props {
 }
 
 const ReusableTable: React.FC<Props> = ({ data }) => {
+    const StyledTable = chakra(Table, {
+        baseStyle: {
+            background: "#ffffff",
+            paddingY: "30px",
+        },
+    });
+
+    const StyledTableCap = chakra(TableCaption, {
+        baseStyle: {
+            background: "#ffffff",
+            margin: 0,
+        },
+    });
+
+    const StyledTh = chakra(Th, {
+        baseStyle: {
+            paddingY: "1.5rem",
+            color: "#A1A1AA",
+            fontWeight: 'bold',
+        },
+    });
+
+    const StyledTd = chakra(Td, {
+        baseStyle: {
+            color: "#27272A",
+            fontSize: "1px",
+        },
+    });
     const [page, setPage] = useState(0);
     const [filterText, setFilterText] = useState("");
     const itemsPerPage = 4;
@@ -85,15 +113,15 @@ const ReusableTable: React.FC<Props> = ({ data }) => {
                 </InputLeftElement>
                 <Input className="bg-white" type='text' placeholder='Filter by name' value={filterText} onChange={handleFilterChange} />
             </InputGroup>
-            <Table variant="simple">
+            <StyledTable variant="simple">
                 <Thead>
                     <Tr className="py-8">
-                        <Th>Name</Th>
-                        <Th>Endpoint</Th>
-                        <Th>Service</Th>
-                        <Th>Queue</Th>
-                        <Th>Security</Th>
-                        <Th>HttpCommands</Th>
+                        <StyledTh>Name</StyledTh>
+                        <StyledTh>Endpoint</StyledTh>
+                        <StyledTh>Service</StyledTh>
+                        <StyledTh>Queue</StyledTh>
+                        <StyledTh>Security</StyledTh>
+                        <StyledTh>HttpCommands</StyledTh>
                     </Tr>
                 </Thead>
                 <Tbody>
@@ -114,8 +142,8 @@ const ReusableTable: React.FC<Props> = ({ data }) => {
                             </Tr>
                         ))}
                 </Tbody>
-                <TableCaption>
-                    <div className="flex justify-between">
+                <StyledTableCap>
+                    <div className="flex justify-between mt-24">
                         <div>
                             <span>{filteredData.length} records</span>
                         </div>
@@ -171,8 +199,8 @@ const ReusableTable: React.FC<Props> = ({ data }) => {
                             </Button>
                         </div>
                     </div>
-                </TableCaption>
-            </Table>
+                </StyledTableCap>
+            </StyledTable>
         </Box >
     );
 };
