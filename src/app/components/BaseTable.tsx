@@ -1,8 +1,8 @@
-import { chakra, InputLeftElement, Box, Input, Table, Thead, Tbody, Tr, Th, Td, TableCaption, Button, InputGroup } from "@chakra-ui/react";
+import { Box, Button, Input, InputGroup, InputLeftElement, Table, TableCaption, Tbody, Td, Th, Thead, Tr, border } from "@chakra-ui/react";
 import React, { useState } from "react";
-import SearchIcon from "../icons/searchIcon";
 import ChevronIconLeft from "../icons/left";
 import ChevronIconRight from "../icons/right";
+import SearchIcon from "../icons/searchIcon";
 
 interface Data {
     name: string;
@@ -57,8 +57,20 @@ const ReusableTable: React.FC<Props> = ({ data }) => {
                 startPage = Math.max(endPage - totalButtons + 1, 0);
             }
 
+            // Ensure there are at most 7 buttons
+            if (endPage - startPage + 1 < totalButtons) {
+                endPage = startPage + totalButtons - 1;
+            }
+
+            // Concatenate pages in the middle
+            if (startPage > 0) {
+                pageNumbers.push(-1); // Placeholder for concatenation
+            }
             for (let i = startPage; i <= endPage; i++) {
                 pageNumbers.push(i);
+            }
+            if (endPage < pageCount - 1) {
+                pageNumbers.push(-2); // Placeholder for concatenation
             }
         }
 
@@ -111,23 +123,49 @@ const ReusableTable: React.FC<Props> = ({ data }) => {
                             <Button
                                 disabled={page === 0}
                                 onClick={() => handleChangePage(page - 1)}
-                                mr={2}
+                                border={"1px solid #E4E4E7"}
+                                borderRight={0}
+                                size={"sm"}
+                                borderRadius={0}
+                                borderTopLeftRadius={10}
+                                borderBottomLeftRadius={10}
+                                bg={"#ffffff"}
                             >
                                 <ChevronIconLeft />
                             </Button>
-                            {getPageNumbers().map((pageNumber) => (
-                                <Button
-                                    key={pageNumber}
-                                    onClick={() => handleChangePage(pageNumber)}
-                                    colorScheme={page === pageNumber ? "blue" : undefined}
-                                >
-                                    {pageNumber + 1}
-                                </Button>
+                            {getPageNumbers().map((pageNumber, index) => (
+                                <React.Fragment key={index}>
+                                    {pageNumber === -1 || pageNumber === -2 ? (
+                                        <Button border={"1px solid #E4E4E7"}
+                                            borderRight={0}
+                                            size={"sm"}
+                                            bg={page === pageNumber ? "#4763E4" : "#ffffff"}
+                                            borderRadius={0}>...</Button>
+                                    ) : (
+                                        <Button
+                                            onClick={() => handleChangePage(pageNumber)}
+                                            bg={page === pageNumber ? "#4763E4" : "#ffffff"}
+                                            color={page === pageNumber ? "#ffffff" : "#27272A"}
+                                            border={"1px solid #E4E4E7"}
+                                            borderRight={0}
+                                            size={"sm"}
+                                            borderRadius={0}
+                                        >
+                                            {pageNumber + 1}
+                                        </Button>
+                                    )}
+                                </React.Fragment>
                             ))}
                             <Button
                                 disabled={page === pageCount - 1}
                                 onClick={() => handleChangePage(page + 1)}
-                                ml={2}
+                                border={"1px solid #E4E4E7"}
+                                borderLeft={0}
+                                size={"sm"}
+                                borderRadius={0}
+                                borderTopRightRadius={10}
+                                borderBottomRightRadius={10}
+                                bg={"#ffffff"}
                             >
                                 <ChevronIconRight />
                             </Button>
@@ -135,7 +173,7 @@ const ReusableTable: React.FC<Props> = ({ data }) => {
                     </div>
                 </TableCaption>
             </Table>
-        </Box>
+        </Box >
     );
 };
 
