@@ -1,5 +1,5 @@
 // context/AuthContext.tsx
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
 type User = {
@@ -22,6 +22,34 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const [user, setUser] = useState<User | null>(null);
     const [accessToken, setAccessToken] = useState<string | null>(null);
 
+    useEffect(() => {
+        const fetchUser = async () => {
+            try {
+                const storedAccessToken = localStorage.getItem('accessToken');
+                if (storedAccessToken) {
+                    setAccessToken(storedAccessToken);
+
+                    const verifyResponse = await axios.post<User>(
+                        `${process.env.NEXT_PUBLIC_BASE_URL}/auth/verify`,
+                        null,
+                        {
+                            headers: {
+                                Authorization: `Bearer ${storedAccessToken}`,
+                            },
+                        }
+                    );
+                    const userData = verifyResponse.data;
+
+                    setUser(userData);
+                }
+            } catch (error) {
+                console.error('Error fetching user:', error);
+            }
+        };
+
+        fetchUser();
+    }, []);
+
     const login = async (redirectUri: string) => {
         try {
             const authUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/auth/oauth_authorize?redirect_uri=${redirectUri}`;
@@ -38,6 +66,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 { code }
             );
             const { access_token } = response.data;
+
+            localStorage.setItem('accessToken', access_token);
 
             const verifyResponse = await axios.post<User>(
                 `${process.env.NEXT_PUBLIC_BASE_URL}/auth/verify`,
@@ -58,6 +88,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     };
 
     const logout = () => {
+        localStorage.removeItem('accessToken');
         setUser(null);
         setAccessToken(null);
     };

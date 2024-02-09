@@ -19,7 +19,7 @@ const BaseNavbar: React.FC = () => {
                 <img src="./logo.png" alt="logo" height={27} />
                 <div className='flex items-center gap-x-3'>
                     <div>
-                        <p className='text-xs'>{user?.name || '-'}</p>
+                        <p className='text-xs font-bold'>{user?.name || '-'}</p>
                         <p className='text-xs'>{user?.email || '-'}</p>
                     </div>
                     <img src={user?.picture} className='rounded-full' alt="Profile" width={50} height={50} />

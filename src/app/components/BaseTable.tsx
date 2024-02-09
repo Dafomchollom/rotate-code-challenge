@@ -1,7 +1,6 @@
-import { chakra, InputLeftElement, Box, Input, Table, Thead, Tbody, Tr, Th, Td, TableCaption, Button, InputGroup, createMultiStyleConfigHelpers, defineStyle } from "@chakra-ui/react";
+import { chakra, InputLeftElement, Box, Input, Table, Thead, Tbody, Tr, Th, Td, TableCaption, Button, InputGroup } from "@chakra-ui/react";
 import React, { useState } from "react";
 import SearchIcon from "../icons/searchIcon";
-import { tableAnatomy } from '@chakra-ui/anatomy';
 import ChevronIconLeft from "../icons/left";
 import ChevronIconRight from "../icons/right";
 
@@ -22,34 +21,6 @@ interface Props {
 }
 
 const ReusableTable: React.FC<Props> = ({ data }) => {
-
-    const StyledTable = chakra(Table, {
-        baseStyle: {
-            background: "#ffffff",
-        },
-    });
-
-    const StyledTableCap = chakra(TableCaption, {
-        baseStyle: {
-            background: "#ffffff",
-            margin: 0,
-        },
-    });
-
-    const StyledTh = chakra(Th, {
-        baseStyle: {
-            paddingY: "1.5rem",
-            color: "#A1A1AA",
-            fontWeight: 'bold',
-        },
-    });
-
-    const StyledTd = chakra(Td, {
-        baseStyle: {
-            color: "#27272A",
-        },
-    });
-
     const [page, setPage] = useState(0);
     const [filterText, setFilterText] = useState("");
     const itemsPerPage = 4;
@@ -102,15 +73,15 @@ const ReusableTable: React.FC<Props> = ({ data }) => {
                 </InputLeftElement>
                 <Input className="bg-white" type='text' placeholder='Filter by name' value={filterText} onChange={handleFilterChange} />
             </InputGroup>
-            <StyledTable variant="simple">
+            <Table variant="simple">
                 <Thead>
                     <Tr className="py-8">
-                        <StyledTh>Name</StyledTh>
-                        <StyledTh>Endpoint</StyledTh>
-                        <StyledTh>Service</StyledTh>
-                        <StyledTh>Queue</StyledTh>
-                        <StyledTh>Security</StyledTh>
-                        <StyledTh>HttpCommands</StyledTh>
+                        <Th>Name</Th>
+                        <Th>Endpoint</Th>
+                        <Th>Service</Th>
+                        <Th>Queue</Th>
+                        <Th>Security</Th>
+                        <Th>HttpCommands</Th>
                     </Tr>
                 </Thead>
                 <Tbody>
@@ -118,11 +89,11 @@ const ReusableTable: React.FC<Props> = ({ data }) => {
                         .slice(page * itemsPerPage, (page + 1) * itemsPerPage)
                         .map((item, index) => (
                             <Tr key={index}>
-                                <StyledTd>{item.name}</StyledTd>
-                                <StyledTd>{item.endpoint}</StyledTd>
-                                <StyledTd>{item.service_name}</StyledTd>
-                                <StyledTd>{item.rpc_queue}</StyledTd>
-                                <StyledTd>{item.rest_action}</StyledTd>
+                                <Td>{item.name}</Td>
+                                <Td>{item.endpoint}</Td>
+                                <Td>{item.service_name}</Td>
+                                <Td>{item.rpc_queue}</Td>
+                                <Td>{item.rest_action}</Td>
                                 <Td>
                                     <button className="text-[#5C73DB] border border-[#5C73DB] rounded-lg w-full p-[8px]">
                                         {item.http_command}
@@ -131,10 +102,10 @@ const ReusableTable: React.FC<Props> = ({ data }) => {
                             </Tr>
                         ))}
                 </Tbody>
-                <StyledTableCap>
-                    <div className="flex justify-between mt-20">
+                <TableCaption>
+                    <div className="flex justify-between">
                         <div>
-                            <span className="text-">{getPageNumbers.length} records</span>
+                            <span>{filteredData.length} records</span>
                         </div>
                         <div>
                             <Button
@@ -162,8 +133,8 @@ const ReusableTable: React.FC<Props> = ({ data }) => {
                             </Button>
                         </div>
                     </div>
-                </StyledTableCap>
-            </StyledTable>
+                </TableCaption>
+            </Table>
         </Box>
     );
 };
